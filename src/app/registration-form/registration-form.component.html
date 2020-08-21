@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text-center">Registration Form</h1>
+    <div class="alert alert-danger" *ngIf="showError">
+      <strong>Please fill all the fields.</strong>
+    </div>
+    <form [formGroup]="registrationForm">
+      <div class="form-group" [ngClass]="{'has-error': registrationForm.get('name').errors}">
+        <label class="label">What is your Name?</label>
+        <input formControlName="name" type="text" maxlength="500" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="label">What is your age?</label>
+        <input formControlName="age" type="number" maxlength="3" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="label">What is your email?</label>
+        <input formControlName="email" type="text" maxlength="500" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="label margin-right">Gender</label>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" value="male" name="gender" formControlName="gender">
+          <label class="form-check-label" for="materialInline1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" value="female" name="gender" formControlName="gender">
+          <label class="form-check-label" for="materialInline2">Female</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label margin-right">What is your Qualification?</label>
+        <select class="dropdown" formControlName="qualification" name="qualification">
+          <option value="Degree">Degree</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+          <option value="M.Tech">M.Tech</option>
+          <option value="B.Tech">B.Tech</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="text-center margin-bottom">
+      <button type="button" class="btn btn-primary label" title="Navigate to new component" (click)="navigation()">Add
+        Component</button>
+    </div>
+
+    <div class="text-center">
+      <button type="button" class="btn btn-primary label" title="Download JSON File" (click)="downloadJson()">Download
+        JSON</button>
+    </div>
+  </div>
+
+</div>

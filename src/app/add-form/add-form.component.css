@@ -1,0 +1,16 @@
+.container {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.jumbotron {
+    padding: 2rem 2rem !important;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.margin-right {
+    margin-right: 25px;
+}
